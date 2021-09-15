@@ -1,11 +1,10 @@
 <template>
   <ul>
-    <li><img src="./assets/logovoituremodifie.png" alt="logo" height="80" width="80" /></li>
-    <li>page principale</li>
-    <li >page recherche</li>
-    <li >page annonce individuel</li>
-    <li > Se connecter </li>
-    <li > se deconnecter </li>
+    <li><router-link to="/"><img src="./assets/logovoituremodifie.png" alt="logo" height="80" width="80" /></router-link></li>
+    <li><router-link to="/">page principale</router-link></li>
+    <li ><router-link to="Search">page recherche</router-link></li>
+    <li v-if="!isConnect" ><router-link to="Login"> Se connecter</router-link></li>
+    <li @click="disconnect" v-if="isConnect"> se deconnecter </li>
   </ul>
 
 </template>
@@ -15,8 +14,26 @@
 
 
 export default {
-  name: 'TheHeader'
-
+  name: 'TheHeader',
+  data(){
+    return {
+      isConnect : false,
+      userId: '',
+      userRoles: ''
+    }
+  },
+  methods:{
+    disconnect(){
+      localStorage.clear()
+    }
+  },
+  mounted() {
+    if(localStorage.getItem('jwtToken')){
+      this.isConnect = true;
+      this.userId = localStorage.getItem('userId');
+      this.userRoles = localStorage.getItem('userRoles')
+    }
+  }
 }
 </script>
 
@@ -39,6 +56,8 @@ button {
   background-color: coral;
   cursor: pointer;
 }
+
+
 
 
 </style>

@@ -28,15 +28,21 @@ export default {
 
 
 <style scoped>
+.footer a , .footer a svg{
+  transition: 0.5s ease;
+}
+
 .mentions{
   display: flex;
   flex-direction: column;
   align-items:center;
+
 }
 .mentions a{
   text-decoration:none;
   margin: 10px;
   color:rgba(28, 35, 33, 1) ;
+
 }
 .footer{
   display: flex;
@@ -44,10 +50,11 @@ export default {
   align-items: center;
   justify-content:center;
   background-color:rgba(224, 99, 59, 1) ;
+  min-height: 300px;
 }
 .reseauSociaux a{
   margin: 50px;
-  color:rgba(28, 35, 33, 1)
+  color:rgba(28, 35, 33, 1);
 }
 
 svg:hover{
@@ -56,6 +63,7 @@ svg:hover{
   border: solid 3px white  ;
   border-radius: 5px;
   background-color:rgba(28, 35, 33, 1) ;
+
 
 }
 

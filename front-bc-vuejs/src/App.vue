@@ -1,10 +1,8 @@
 <template>
   <TheHeader></TheHeader>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <div class="containerbloc">
   <router-view/>
+  </div>
   <TheFooter></TheFooter>
 </template>
 
@@ -32,16 +30,34 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.containerbloc{
+  min-height: 30vh;
+  max-width: 80%;
+  margin: auto;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color:rgba(28, 35, 33, 1) ;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+ul {
+  list-style: none;
 }
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+
+
+
 </style>
