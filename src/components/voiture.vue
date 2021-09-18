@@ -28,6 +28,11 @@ export default {
     }
 
   },
+  watch:{
+    voiture : function (nval) {
+      console.log(nval)
+    }
+  },
 
   mounted() {
     console.log(this.carId)
